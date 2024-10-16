@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/event_model.dart';
+import 'package:flutter_application_1/models/bottom_bar_item.dart';
 import 'package:flutter_application_1/screens/home/widgets/popular_event_item.dart';
 import 'widgets/event_item.dart';
 
@@ -46,116 +47,159 @@ final popularEventList = [
   ),
 ];
 
+final bottomBarItemDataList = [
+  BottomBarItemModel(
+    image: 'assets/icones/explorer.png',
+    title: 'Explore',
+  ),
+  BottomBarItemModel(
+    image: 'assets/icones/Calendar.png',
+    title: 'Calendrier',
+  ),
+  BottomBarItemModel(
+    image: 'assets/icones/Notification.png',
+    title: 'Notifications',
+  ),
+  BottomBarItemModel(
+    image: 'assets/icones/User.png',
+    title: 'Profile',
+  ),
+];
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          /*Top container*/
-          Container(
-            margin: const EdgeInsets.only(top: 50, bottom: 10),
-            child: const Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Image(image: AssetImage('assets/icones/loupe.png')),
-                Image(image: AssetImage('assets/images/profile.png')),
-                Image(image: AssetImage('assets/icones/parametre.png')),
-              ],
+        body: Column(
+          children: [
+            /*Top container*/
+            Container(
+              margin: const EdgeInsets.only(top: 50, bottom: 10),
+              child: const Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Image(image: AssetImage('assets/icones/loupe.png')),
+                  Image(image: AssetImage('assets/images/profile.png')),
+                  Image(image: AssetImage('assets/icones/parametre.png')),
+                ],
+              ),
             ),
-          ),
 
-          /*Events*/
+            /*Events*/
 
-          Expanded(
-            child: ListView(
-              children: [
-                /*evenement a venir*/
-                const Row(
-                  children: [
-                    SizedBox(width: 20),
-                    Text(
-                      'Evenement a venir',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
-                    ),
-                  ],
-                ),
+            Expanded(
+              child: ListView(
+                children: [
+                  /*evenement a venir*/
 
-                /*Evenement a venir imtems*/
-
-                SizedBox(
-                  height: 270,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (ctx, index) {
-                      final eventModel = eventList[index];
-                      return EventItem(eventModel: eventModel);
-                    },
-                    itemCount: eventList.length,
-                  ),
-                ),
-
-                /*Popular event*/
-
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  const Row(
                     children: [
+                      SizedBox(width: 20),
                       Text(
-                        'Popular Event',
+                        'Evenement a venir',
                         style: TextStyle(
                             fontWeight: FontWeight.w700, fontSize: 20),
                       ),
-                      Text(
-                        'SEE ALL',
-                        style: TextStyle(color: Colors.grey),
-                      )
                     ],
                   ),
-                ),
 
-                /*PopularItems*/
+                  /*Evenement a venir imtems*/
 
-                const PopularEventItem(),
-                const PopularEventItem(),
-                const PopularEventItem()
-              ],
+                  SizedBox(
+                    height: 270,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (ctx, index) {
+                        final eventModel = eventList[index];
+                        return EventItem(eventModel: eventModel);
+                      },
+                      itemCount: eventList.length,
+                    ),
+                  ),
+
+                  /*Popular event*/
+
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Popular Event',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 20),
+                        ),
+                        Text(
+                          'SEE ALL',
+                          style: TextStyle(color: Colors.grey),
+                        )
+                      ],
+                    ),
+                  ),
+
+                  /*PopularItems*/
+
+                  const PopularEventItem(),
+                  const PopularEventItem(),
+                  const PopularEventItem()
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
-
-      /*BottomNavigationBar*/
-
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          children: [
-            Container(
-                height: 50,
-                width: 160,
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(100)),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
-                    children: [
-                      Image(image: AssetImage('assets/icones/explorer.png')),
-                      SizedBox(
-                        width: 7,
-                      ),
-                      Text(
-                        'Decouvrir',
-                        style: TextStyle(fontWeight: FontWeight.w900),
-                      )
-                    ],
-                  ),
-                )),
           ],
         ),
+
+        /*BottomNavigationBar*/
+
+        bottomNavigationBar: BottomAppBar(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              BottomBarItem(
+                imagePath: bottomBarItemDataList[0].image,
+                title: bottomBarItemDataList[0].title,
+              ),
+              BottomBarItem(
+                imagePath: bottomBarItemDataList[1].image,
+                title: bottomBarItemDataList[1].title,
+              ),
+              BottomBarItem(
+                imagePath: bottomBarItemDataList[2].image,
+                title: bottomBarItemDataList[2].title,
+              ),
+              BottomBarItem(
+                imagePath: bottomBarItemDataList[3].image,
+                title: bottomBarItemDataList[3].title,
+              ),
+            ],
+          ),
+        ));
+  }
+}
+
+class BottomBarItem extends StatelessWidget {
+  final String imagePath;
+  final String title;
+
+  const BottomBarItem({
+    super.key,
+    required this.imagePath,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(top: 6),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image(image: AssetImage(imagePath)),
+          Text(
+            title,
+            style: const TextStyle(fontWeight: FontWeight.w900),
+          )
+        ],
       ),
     );
   }
