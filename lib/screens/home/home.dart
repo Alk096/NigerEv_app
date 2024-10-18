@@ -233,7 +233,7 @@ class BottomBarItem extends StatelessWidget {
               title,
               style: TextStyle(
                   fontWeight: FontWeight.w900,
-                  color: (isSelected) ? MyTheme.secondayColor : MyTheme.black),
+                  color: (isSelected) ? MyTheme.secondayColor : MyTheme.grey),
             ),
           ],
         ),
