@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/event_model.dart';
 import 'package:flutter_application_1/models/bottom_bar_item.dart';
 import 'package:flutter_application_1/screens/home/widgets/popular_event_item.dart';
+import 'package:flutter_application_1/screens/my_theme.dart';
 import 'widgets/event_item.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -66,7 +67,15 @@ final bottomBarItemDataList = [
   ),
 ];
 
+var bottomBarItemSelecdIndex = 0;
+
 class _HomeScreenState extends State<HomeScreen> {
+  void selectBottomBarItem(int index) {
+    setState(() {
+      bottomBarItemSelecdIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -158,18 +167,34 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomBarItem(
                 imagePath: bottomBarItemDataList[0].image,
                 title: bottomBarItemDataList[0].title,
+                isSelected: bottomBarItemSelecdIndex == 0,
+                onTap: () {
+                  selectBottomBarItem(0);
+                },
               ),
               BottomBarItem(
                 imagePath: bottomBarItemDataList[1].image,
                 title: bottomBarItemDataList[1].title,
+                isSelected: bottomBarItemSelecdIndex == 1,
+                onTap: () {
+                  selectBottomBarItem(1);
+                },
               ),
               BottomBarItem(
                 imagePath: bottomBarItemDataList[2].image,
                 title: bottomBarItemDataList[2].title,
+                isSelected: bottomBarItemSelecdIndex == 2,
+                onTap: () {
+                  selectBottomBarItem(2);
+                },
               ),
               BottomBarItem(
                 imagePath: bottomBarItemDataList[3].image,
                 title: bottomBarItemDataList[3].title,
+                isSelected: bottomBarItemSelecdIndex == 3,
+                onTap: () {
+                  selectBottomBarItem(3);
+                },
               ),
             ],
           ),
@@ -180,26 +205,38 @@ class _HomeScreenState extends State<HomeScreen> {
 class BottomBarItem extends StatelessWidget {
   final String imagePath;
   final String title;
+  final bool isSelected;
+  final Function onTap;
 
-  const BottomBarItem({
-    super.key,
-    required this.imagePath,
-    required this.title,
-  });
+  const BottomBarItem(
+      {super.key,
+      required this.imagePath,
+      required this.title,
+      required this.isSelected,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 6),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image(image: AssetImage(imagePath)),
-          Text(
-            title,
-            style: const TextStyle(fontWeight: FontWeight.w900),
-          )
-        ],
+    return InkWell(
+      onTap: () {
+        onTap.call();
+      },
+      child: Container(
+        margin: const EdgeInsets.only(top: 6),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image(
+                image: AssetImage(imagePath),
+                color: (isSelected) ? MyTheme.secondayColor : MyTheme.grey),
+            Text(
+              title,
+              style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  color: (isSelected) ? MyTheme.secondayColor : MyTheme.black),
+            ),
+          ],
+        ),
       ),
     );
   }
