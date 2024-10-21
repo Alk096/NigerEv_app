@@ -54,8 +54,8 @@ final bottomBarItemDataList = [
     title: 'Explore',
   ),
   BottomBarItemModel(
-    image: 'assets/icones/Calendar.png',
-    title: 'Calendrier',
+    image: 'assets/icones/location.png',
+    title: 'Map',
   ),
   BottomBarItemModel(
     image: 'assets/icones/Notification.png',
@@ -70,6 +70,7 @@ final bottomBarItemDataList = [
 var bottomBarItemSelecdIndex = 0;
 
 class _HomeScreenState extends State<HomeScreen> {
+  
   void selectBottomBarItem(int index) {
     setState(() {
       bottomBarItemSelecdIndex = index;
