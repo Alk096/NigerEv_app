@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/my_theme.dart';
 
 class Onboarding3Screen extends StatelessWidget {
   const Onboarding3Screen({super.key});
@@ -21,7 +22,7 @@ class Onboarding3Screen extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               decoration: BoxDecoration(
-                color: Color.fromRGBO(22, 145, 169, 1),
+                color: MyTheme.primaryColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(42),
                   topRight: Radius.circular(42),
@@ -34,7 +35,7 @@ class Onboarding3Screen extends StatelessWidget {
                   Text(
                     'Affiner les recherches avec \nGoogle map',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: MyTheme.white,
                       fontSize: 24,
                     ),
                     textAlign: TextAlign.center,
@@ -45,7 +46,7 @@ class Onboarding3Screen extends StatelessWidget {
                   Text(
                     '  In publishing and graphic design, Lorem is \na placeholder text commonly',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: MyTheme.white,
                       fontSize: 15,
                     ),
                     textAlign: TextAlign.center,
@@ -63,7 +64,7 @@ class Onboarding3Screen extends StatelessWidget {
                         child: Text(
                           'Skip',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: MyTheme.white,
                             fontSize: 18,
                           ),
                         ),
@@ -94,7 +95,7 @@ class Onboarding3Screen extends StatelessWidget {
                         child: Text(
                           'Next',
                           style: TextStyle(
-                            color: Colors.white38,
+                            color: MyTheme.grey,
                             fontSize: 18,
                           ),
                         ),

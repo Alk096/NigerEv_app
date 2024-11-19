@@ -153,7 +153,7 @@ class _SingInScreenState extends State<SingInScreen> {
                         margin: EdgeInsets.symmetric(horizontal: 66),
                         padding: EdgeInsets.symmetric(vertical: 12),
                         decoration: BoxDecoration(
-                            color: Color.fromRGBO(237, 123, 34, 1),
+                            color: MyTheme.secondayColor,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(12))),
                         child: Row(

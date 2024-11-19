@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/my_theme.dart';
 import 'package:flutter_application_1/screens/onboarding_screen/onboarding3_screen.dart';
 
 class Onboarding2Screen extends StatelessWidget {
@@ -22,7 +23,7 @@ class Onboarding2Screen extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               decoration: BoxDecoration(
-                color: Color.fromRGBO(237, 123, 34, 1),
+                color: MyTheme.secondayColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(42),
                   topRight: Radius.circular(42),
@@ -35,7 +36,7 @@ class Onboarding2Screen extends StatelessWidget {
                   Text(
                     'Vivez en direct les \nevenements au niger',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: MyTheme.white,
                       fontSize: 24,
                     ),
                     textAlign: TextAlign.center,
@@ -46,7 +47,7 @@ class Onboarding2Screen extends StatelessWidget {
                   Text(
                     '  In publishing and graphic design, Lorem is \na placeholder text commonly',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: MyTheme.white,
                       fontSize: 15,
                     ),
                     textAlign: TextAlign.center,
@@ -64,7 +65,7 @@ class Onboarding2Screen extends StatelessWidget {
                         child: Text(
                           'Skip',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: MyTheme.white,
                             fontSize: 18,
                           ),
                         ),
@@ -100,7 +101,7 @@ class Onboarding2Screen extends StatelessWidget {
                         child: Text(
                           'Next',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: MyTheme.white,
                             fontSize: 18,
                           ),
                         ),

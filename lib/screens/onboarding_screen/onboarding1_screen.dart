@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/my_theme.dart';
 import 'package:flutter_application_1/screens/onboarding_screen/onboarding2_screen.dart';
 
 class Onboarding1Screen extends StatelessWidget {
@@ -22,7 +23,7 @@ class Onboarding1Screen extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               decoration: BoxDecoration(
-                color: Color.fromRGBO(22, 145, 169, 1),
+                color: MyTheme.primaryColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(42),
                   topRight: Radius.circular(42),
@@ -46,7 +47,7 @@ class Onboarding1Screen extends StatelessWidget {
                   Text(
                     '  In publishing and graphic design, Lorem is \na placeholder text commonly',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: MyTheme.white,
                       fontSize: 15,
                     ),
                     textAlign: TextAlign.center,
@@ -60,7 +61,7 @@ class Onboarding1Screen extends StatelessWidget {
                       Text(
                         'Skip',
                         style: TextStyle(
-                          color: Colors.white38,
+                          color: MyTheme.grey,
                           fontSize: 18,
                         ),
                       ),
@@ -95,7 +96,7 @@ class Onboarding1Screen extends StatelessWidget {
                         child: Text(
                           'Next',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: MyTheme.white,
                             fontSize: 18,
                           ),
                         ),

@@ -6,8 +6,8 @@ class PopularEventItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(18.0),
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Row(
         children: [
           Container(
@@ -18,7 +18,7 @@ class PopularEventItem extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.only(left: 10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -31,7 +31,7 @@ class PopularEventItem extends StatelessWidget {
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                 ),
                 Text(
-                  'Biggest Event in dhaka,join to see\nthe excitment of the new car guy',
+                  'Biggest Event in dhaka, join to\n see the excitment of the\nnew car guy',
                   style: TextStyle(color: MyTheme.grey),
                 ),
                 Row(
