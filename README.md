@@ -1,16 +1,14 @@
-# flutter_application_1
+Niger Event est une application mobile conçue pour numériser les événements au Niger. Elle permet aux organisateurs de publier leurs événements à venir et aux participants d'acheter leurs tickets en toute simplicité grâce à un système de gestion numérique innovant.
 
-A new Flutter project.
+📋 Fonctionnalités principales
+Publication d'événements :
+Les organisateurs peuvent publier leurs événements directement sur l'application avec des détails comme le lieu, la date, l'heure, et les prix des tickets.
 
-## Getting Started
+Achat de tickets :
+Les utilisateurs doivent créer un compte pour accéder à la plateforme d'achat.
 
-This project is a starting point for a Flutter application.
+Génération de QR codes :
+Une fois le ticket acheté, un code QR unique est généré pour chaque participant.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Contrôle d'accès :
+Le QR code est scanné à l'entrée pour valider l'accès à l'événement.
